@@ -1,8 +1,7 @@
 <?php
 header('Content-Type: application/json; charset=UTF-8');
-header('Access-Control-Allow-Origin: *');
 header('Access-Control-Allow-Methods: POST, DELETE');
-header('Access-Control-Allow-Headers: Access-Control-Allow-Headers,Content-Type,Access-Control-Allow-Methods, Authorization, X-Requested-With');
+header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, Content-Type,Access-Control-Allow-Methods, X-Requested-With');
 
 function response($error, $message) {
     echo json_encode(array("status" => $error, "message" => $message), JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
