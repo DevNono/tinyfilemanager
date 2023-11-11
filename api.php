@@ -127,9 +127,5 @@ try {
 }
 catch (\Error $e) {
    // do your catching
-    response(1, '{
-        "error": '.$e->getMessage().',
-        "line": '.$e->getLine().',
-        "file": '.$e->getFile().'
-    }');
+    response(1, 'Erreur inconnue');
 }
