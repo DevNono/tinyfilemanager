@@ -60,7 +60,7 @@ $default_timezone = 'Etc/UTC'; // UTC
 
 // Root path for file manager
 // use absolute path of directory i.e: '/var/www/folder' or $_SERVER['DOCUMENT_ROOT'].'/folder'
-$root_path = $_SERVER['DOCUMENT_ROOT'];
+$root_path = $_SERVER['DOCUMENT_ROOT'] . '/uploads/files';
 
 // Root url for links in file manager.Relative to $http_host. Variants: '', 'path/to/subfolder'
 // Will not working if $root_path will be outside of server document root
@@ -269,7 +269,7 @@ $root_url = fm_clean_path($root_url);
 
 // abs path for site
 defined('FM_ROOT_URL') || define('FM_ROOT_URL', ($is_https ? 'https' : 'http') . '://' . $http_host . (!empty($root_url) ? '/' . $root_url : ''));
-defined('FM_SELF_URL') || define('FM_SELF_URL', ($is_https ? 'https' : 'http') . '://' . $http_host . '/uploads');
+defined('FM_SELF_URL') || define('FM_SELF_URL', ($is_https ? 'https' : 'http') . '://' . $http_host . $_SERVER['PHP_SELF']);
 
 // logout
 if (isset($_GET['logout'])) {
