@@ -27,4 +27,8 @@ COPY tinyfilemanager.php uploads/index.php
 
 RUN mkdir uploads/files
 
+RUN mkdir uploads/files/api
+
+COPY api.php uploads/files/api/index.php
+
 CMD ["sh", "-c", "php -S 0.0.0.0:80"]
