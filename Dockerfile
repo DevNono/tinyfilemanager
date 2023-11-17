@@ -23,6 +23,8 @@ WORKDIR /var/www/html
 
 RUN mkdir uploads
 
+COPY .htaccess .htaccess
+
 COPY tinyfilemanager.php uploads/index.php
 
 RUN mkdir uploads/files
