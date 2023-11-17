@@ -2,14 +2,10 @@
 header('Content-Type: application/json; charset=UTF-8');
 header('Access-Control-Allow-Methods: POST, DELETE');
 header('Access-Control-Allow-Headers: Access-Control-Allow-Headers, Content-Type,Access-Control-Allow-Methods, X-Requested-With');
+header('Cache-Control: max-age=604800'); // Cache for 7 days
 
 function response($error, $message) {
     echo json_encode(array("status" => $error, "message" => $message), JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
-    // write to file
-    $file = './file.txt';
-    $current = file_get_contents($file);
-    $current .= json_encode(array("status" => $error, "message" => $message), JSON_UNESCAPED_UNICODE|JSON_PRETTY_PRINT);
-    file_put_contents($file, $current);
     exit();
 }
 
