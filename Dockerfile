@@ -23,7 +23,7 @@ WORKDIR /var/www/html
 
 RUN mkdir uploads
 
-COPY .htaccess .htaccess
+COPY router.php router.php
 
 COPY tinyfilemanager.php uploads/index.php
 
@@ -33,4 +33,4 @@ RUN mkdir uploads/files/api
 
 COPY api.php uploads/files/api/index.php
 
-CMD ["sh", "-c", "php -S 0.0.0.0:80"]
+CMD ["sh", "-c", "php -S 0.0.0.0:80 router.php"]
