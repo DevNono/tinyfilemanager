@@ -13,8 +13,8 @@ try {
     $key = str_replace('"', '', getenv('API_KEY') ?? response(1, 'API_KEY not found in environnement'));
 
     $allowed_paths = ['tournaments', 'partners'];
-    $allowed_file_types = ['image/png', 'image/jpeg', 'application/pdf'];
-    $allowed_extensions = ['png', 'jpg', 'pdf'];
+    $allowed_file_types = ['image/png', 'image/jpeg', 'image/webp', 'application/pdf'];
+    $allowed_extensions = ['png', 'jpg', 'pdf', 'webp'];
 
     if(empty($_GET) || empty($_GET['authorization'])) {
         response(1, 'Paramètres manquants');
