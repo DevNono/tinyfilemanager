@@ -12,7 +12,7 @@ try {
     // Get API_KEY from environment variable and remove the quotes
     $key = str_replace('"', '', getenv('API_KEY') ?? response(1, '[File Upload] API_KEY not found in environnement'));
 
-    $allowed_paths = ['tournaments', 'partners', 'orga'];
+    $allowed_paths = ['tournaments', 'partners', 'orga', 'items'];
     $allowed_file_types = ['image/png', 'image/jpeg', 'image/webp', 'application/pdf'];
     $allowed_extensions = ['png', 'jpg', 'pdf', 'webp'];
 
